@@ -14,5 +14,20 @@ namespace DesafioFundamentos.Models
         {
             Placa = placa.ToUpper();
         }
+
+        public bool ValidarPlacaVeiculo(Veiculo veiculo)
+        {
+            if (!veiculo.Placa.Contains("-"))
+            {
+                return false;
+            }
+
+            if(veiculo.Placa.Length == 0 || veiculo.Placa.Length > 8)
+            {
+                return false;
+            }
+
+         return true;
+        }
     }
 }
